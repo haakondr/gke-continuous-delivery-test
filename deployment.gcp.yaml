@@ -1,0 +1,20 @@
+apiVersion: apps/v1beta1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: haakontest 
+  labels:
+    app: haakontest
+spec:
+  selector:
+    matchLabels:
+      app: haakontest
+  template:
+    metadata:
+      labels:
+        app: haakontest
+    spec:
+      containers:
+      - name: haakontest-container
+        image: eu.gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA
+        ports:
+          - containerPort: 80 
