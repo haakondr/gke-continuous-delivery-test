@@ -4,5 +4,5 @@ Setup buildtrigger on cloudbuild.yaml in google container registry
 
 ## Required env variables:
 
-- CLOUDSDK_COMPUTE_ZONE
-- CLOUDSDK_CONTAINER_CLUSTER
+- _CLOUDSDK_COMPUTE_ZONE
+- _CLOUDSDK_CONTAINER_CLUSTER
