@@ -1,14 +1,11 @@
 steps:
 
-
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'eu.gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA', '.']
-
-- name: 'gcr.io/cloud-builders/kubectl'
   args:
-  - apply
-  - -f
-  - deployment.gcp.yaml
-  env:
-  - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=niva-prod-cluster'
+    - build
+    - -t
+    - eu.gcr.io/niva-cd/haakontest:$SHORT_SHA
+    - eu.gcr.io/niva-cd/haakontest:latest
+    - .
+
+images: ['eu.gcr.io/niva-cd/haakontest:$SHORT_SHA']
