@@ -3,8 +3,10 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - build
-    - -t eu.gcr.io/niva-cd/haakontest:$SHORT_SHA
-    - -t eu.gcr.io/niva-cd/haakontest:latest
+    - -t 
+    - eu.gcr.io/niva-cd/haakontest:$SHORT_SHA
+    - -t 
+    - eu.gcr.io/niva-cd/haakontest:latest
     - .
 
 images: [
